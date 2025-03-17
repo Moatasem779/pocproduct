@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>BaseProductModule</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="9.1.0" />
+    <ProjectReference Include="..\BaseProductModule.Domain.Shared\BaseProductModule.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

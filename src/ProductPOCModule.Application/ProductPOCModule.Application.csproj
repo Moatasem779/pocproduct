@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ProductPOCModule</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProductPOCModule.Domain\ProductPOCModule.Domain.csproj" />
+    <ProjectReference Include="..\ProductPOCModule.Application.Contracts\ProductPOCModule.Application.Contracts.csproj" />
+  <ProjectReference Include="..\..\modules\BaseProductModule\src\BaseProductModule.Application\BaseProductModule.Application.csproj" /></ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.Account.Application" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="9.1.0" />
+  </ItemGroup>
+
+</Project>

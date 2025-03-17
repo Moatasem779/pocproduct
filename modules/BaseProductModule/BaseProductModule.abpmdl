@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "BaseProductModule.Domain.Shared": {
+      "path": "src/BaseProductModule.Domain.Shared/BaseProductModule.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "BaseProductModule.Domain": {
+      "path": "src/BaseProductModule.Domain/BaseProductModule.Domain.abppkg",
+      "folder": "src"
+    },
+    "BaseProductModule.Application.Contracts": {
+      "path": "src/BaseProductModule.Application.Contracts/BaseProductModule.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "BaseProductModule.Application": {
+      "path": "src/BaseProductModule.Application/BaseProductModule.Application.abppkg",
+      "folder": "src"
+    },
+    "BaseProductModule.EntityFrameworkCore": {
+      "path": "src/BaseProductModule.EntityFrameworkCore/BaseProductModule.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "BaseProductModule.MongoDB": {
+      "path": "src/BaseProductModule.MongoDB/BaseProductModule.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "BaseProductModule.HttpApi": {
+      "path": "src/BaseProductModule.HttpApi/BaseProductModule.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "BaseProductModule.HttpApi.Client": {
+      "path": "src/BaseProductModule.HttpApi.Client/BaseProductModule.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "BaseProductModule.TestBase": {
+      "path": "test/BaseProductModule.TestBase/BaseProductModule.TestBase.abppkg",
+      "folder": "test"
+    },
+    "BaseProductModule.EntityFrameworkCore.Tests": {
+      "path": "test/BaseProductModule.EntityFrameworkCore.Tests/BaseProductModule.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "BaseProductModule.MongoDB.Tests": {
+      "path": "test/BaseProductModule.MongoDB.Tests/BaseProductModule.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "BaseProductModule.Domain.Tests": {
+      "path": "test/BaseProductModule.Domain.Tests/BaseProductModule.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "BaseProductModule.Application.Tests": {
+      "path": "test/BaseProductModule.Application.Tests/BaseProductModule.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "BaseProductModule.HttpApi.Host": {
+      "path": "host/BaseProductModule.HttpApi.Host/BaseProductModule.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "BaseProductModule.Web": {
+      "path": "src/BaseProductModule.Web/BaseProductModule.Web.abppkg",
+      "folder": "src"
+    },
+    "BaseProductModule.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/BaseProductModule.HttpApi.Client.ConsoleTestApp/BaseProductModule.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "BaseProductModule.Web.Host": {
+      "path": "host/BaseProductModule.Web.Host/BaseProductModule.Web.Host.abppkg",
+      "folder": "host"
+    },
+    "BaseProductModule.AuthServer": {
+      "path": "host/BaseProductModule.AuthServer/BaseProductModule.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "BaseProductModule.Host.Shared": {
+      "path": "host/BaseProductModule.Host.Shared/BaseProductModule.Host.Shared.abppkg",
+      "folder": "host"
+    },
+    "BaseProductModule.Web.Unified": {
+      "path": "host/BaseProductModule.Web.Unified/BaseProductModule.Web.Unified.abppkg",
+      "folder": "host"
+    },
+    "BaseProductModule.Blazor": {
+      "path": "src/BaseProductModule.Blazor/BaseProductModule.Blazor.abppkg",
+      "folder": "src"
+    },
+    "BaseProductModule.Blazor.Host": {
+      "path": "host/BaseProductModule.Blazor.Host/BaseProductModule.Blazor.Host.abppkg",
+      "folder": "host"
+    },
+    "BaseProductModule.Blazor.Server": {
+      "path": "src/BaseProductModule.Blazor.Server/BaseProductModule.Blazor.Server.abppkg",
+      "folder": "src"
+    },
+    "BaseProductModule.Blazor.WebAssembly": {
+      "path": "src/BaseProductModule.Blazor.WebAssembly/BaseProductModule.Blazor.WebAssembly.abppkg",
+      "folder": "src"
+    },
+    "BaseProductModule.Blazor.Server.Host": {
+      "path": "host/BaseProductModule.Blazor.Server.Host/BaseProductModule.Blazor.Server.Host.abppkg",
+      "folder": "host"
+    }
+  }
+}

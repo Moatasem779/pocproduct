@@ -1,0 +1,15 @@
+﻿{
+  "applications": {
+    "ProductPOCModule.Blazor": {
+      "type": "dotnet-project",
+      "launchUrl": "https://localhost:44301",
+      "path": "../../../src/ProductPOCModule.Blazor/ProductPOCModule.Blazor.csproj",
+      "kubernetesService": ".*-blazorserver$",
+      "healthCheckEndpoint": "/health-status",
+      "healthUiEndpoint": "/health-ui",
+      "execution": {
+        "order": 2
+      }
+}
+  }
+}

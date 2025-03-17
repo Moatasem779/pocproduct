@@ -1,0 +1,101 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.LeptonXLiteTheme": {
+      "version": "4.1.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.Account": {
+      "version": "9.1.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "9.1.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "9.1.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "9.1.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "9.1.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "9.1.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "9.1.0",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "ProductPOCModule.Application": {
+      "path": "src/ProductPOCModule.Application/ProductPOCModule.Application.abppkg",
+      "folder": "src"
+    },
+    "ProductPOCModule.Application.Tests": {
+      "path": "test/ProductPOCModule.Application.Tests/ProductPOCModule.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "ProductPOCModule.Domain.Shared": {
+      "path": "src/ProductPOCModule.Domain.Shared/ProductPOCModule.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "ProductPOCModule.Application.Contracts": {
+      "path": "src/ProductPOCModule.Application.Contracts/ProductPOCModule.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "ProductPOCModule.HttpApi": {
+      "path": "src/ProductPOCModule.HttpApi/ProductPOCModule.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "ProductPOCModule.HttpApi.Client": {
+      "path": "src/ProductPOCModule.HttpApi.Client/ProductPOCModule.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "ProductPOCModule.EntityFrameworkCore.Tests": {
+      "path": "test/ProductPOCModule.EntityFrameworkCore.Tests/ProductPOCModule.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "ProductPOCModule.EntityFrameworkCore": {
+      "path": "src/ProductPOCModule.EntityFrameworkCore/ProductPOCModule.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "ProductPOCModule.TestBase": {
+      "path": "test/ProductPOCModule.TestBase/ProductPOCModule.TestBase.abppkg",
+      "folder": "test"
+    },
+    "ProductPOCModule.Domain.Tests": {
+      "path": "test/ProductPOCModule.Domain.Tests/ProductPOCModule.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "ProductPOCModule.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/ProductPOCModule.HttpApi.Client.ConsoleTestApp/ProductPOCModule.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "ProductPOCModule.DbMigrator": {
+      "path": "src/ProductPOCModule.DbMigrator/ProductPOCModule.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "ProductPOCModule.Blazor": {
+      "path": "src/ProductPOCModule.Blazor/ProductPOCModule.Blazor.abppkg",
+      "folder": "src"
+    },
+    "ProductPOCModule.Domain": {
+      "path": "src/ProductPOCModule.Domain/ProductPOCModule.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
