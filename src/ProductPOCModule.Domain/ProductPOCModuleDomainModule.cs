@@ -18,6 +18,7 @@ using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
 using Volo.Abp.TenantManagement;
 using BaseProductModule;
+using PhysicalProductModule;
 
 namespace ProductPOCModule;
 
@@ -37,6 +38,7 @@ namespace ProductPOCModule;
     typeof(BlobStoringDatabaseDomainModule)
     )]
 [DependsOn(typeof(BaseProductModuleDomainModule))]
+    [DependsOn(typeof(PhysicalProductModuleDomainModule))]
     public class ProductPOCModuleDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

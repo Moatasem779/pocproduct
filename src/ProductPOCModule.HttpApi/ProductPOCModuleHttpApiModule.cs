@@ -9,6 +9,7 @@ using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.Localization;
 using Volo.Abp.TenantManagement;
 using BaseProductModule;
+using PhysicalProductModule;
 
 namespace ProductPOCModule;
 
@@ -22,6 +23,7 @@ namespace ProductPOCModule;
     typeof(AbpFeatureManagementHttpApiModule)
     )]
 [DependsOn(typeof(BaseProductModuleHttpApiModule))]
+    [DependsOn(typeof(PhysicalProductModuleHttpApiModule))]
     public class ProductPOCModuleHttpApiModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

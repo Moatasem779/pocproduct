@@ -15,6 +15,7 @@ using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using BaseProductModule.EntityFrameworkCore;
+using PhysicalProductModule.EntityFrameworkCore;
 
 namespace ProductPOCModule.EntityFrameworkCore;
 
@@ -68,8 +69,7 @@ public class ProductPOCModuleDbContext :
     {
         base.OnModelCreating(builder);
 
-        /* Include modules to your migration db context */
-
+ 
         builder.ConfigurePermissionManagement();
         builder.ConfigureSettingManagement();
         builder.ConfigureBackgroundJobs();
@@ -89,5 +89,6 @@ public class ProductPOCModuleDbContext :
         //    //...
         //});
         builder.ConfigureBaseProductModule();
+            builder.ConfigurePhysicalProductModule();
         }
 }

@@ -15,6 +15,7 @@ using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using Volo.Abp.Studio;
 using BaseProductModule.EntityFrameworkCore;
+using PhysicalProductModule.EntityFrameworkCore;
 
 namespace ProductPOCModule.EntityFrameworkCore;
 
@@ -32,6 +33,7 @@ namespace ProductPOCModule.EntityFrameworkCore;
     typeof(BlobStoringDatabaseEntityFrameworkCoreModule)
     )]
 [DependsOn(typeof(BaseProductModuleEntityFrameworkCoreModule))]
+    [DependsOn(typeof(PhysicalProductModuleEntityFrameworkCoreModule))]
     public class ProductPOCModuleEntityFrameworkCoreModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

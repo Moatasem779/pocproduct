@@ -14,6 +14,7 @@ using Volo.Abp.OpenIddict;
 using Volo.Abp.BlobStoring.Database;
 using Volo.Abp.TenantManagement;
 using BaseProductModule;
+using PhysicalProductModule;
 
 namespace ProductPOCModule;
 
@@ -29,6 +30,7 @@ namespace ProductPOCModule;
     typeof(BlobStoringDatabaseDomainSharedModule)
     )]
 [DependsOn(typeof(BaseProductModuleDomainSharedModule))]
+    [DependsOn(typeof(PhysicalProductModuleDomainSharedModule))]
     public class ProductPOCModuleDomainSharedModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

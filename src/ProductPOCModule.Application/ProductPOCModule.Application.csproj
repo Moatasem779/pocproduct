@@ -11,7 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ProductPOCModule.Domain\ProductPOCModule.Domain.csproj" />
     <ProjectReference Include="..\ProductPOCModule.Application.Contracts\ProductPOCModule.Application.Contracts.csproj" />
-  <ProjectReference Include="..\..\modules\BaseProductModule\src\BaseProductModule.Application\BaseProductModule.Application.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\BaseProductModule\src\BaseProductModule.Application\BaseProductModule.Application.csproj" /><ProjectReference Include="..\..\modules\PhysicalProductModule\src\PhysicalProductModule.Application\PhysicalProductModule.Application.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="9.1.0" />

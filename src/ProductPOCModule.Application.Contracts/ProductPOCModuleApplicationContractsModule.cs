@@ -6,6 +6,7 @@ using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
 using Volo.Abp.TenantManagement;
 using BaseProductModule;
+using PhysicalProductModule;
 
 namespace ProductPOCModule;
 
@@ -19,6 +20,7 @@ namespace ProductPOCModule;
     typeof(AbpPermissionManagementApplicationContractsModule)
 )]
 [DependsOn(typeof(BaseProductModuleApplicationContractsModule))]
+    [DependsOn(typeof(PhysicalProductModuleApplicationContractsModule))]
     public class ProductPOCModuleApplicationContractsModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "PhysicalProductModule": {
+      "path": "PhysicalProductModule.abpmdl"
+    }
+  }
+}

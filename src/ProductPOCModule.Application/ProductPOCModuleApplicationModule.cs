@@ -7,6 +7,7 @@ using Volo.Abp.FeatureManagement;
 using Volo.Abp.Modularity;
 using Volo.Abp.TenantManagement;
 using BaseProductModule;
+using PhysicalProductModule;
 
 namespace ProductPOCModule;
 
@@ -21,6 +22,7 @@ namespace ProductPOCModule;
     typeof(AbpSettingManagementApplicationModule)
     )]
 [DependsOn(typeof(BaseProductModuleApplicationModule))]
+    [DependsOn(typeof(PhysicalProductModuleApplicationModule))]
     public class ProductPOCModuleApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

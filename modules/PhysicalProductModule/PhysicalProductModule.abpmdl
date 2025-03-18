@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "PhysicalProductModule.Domain.Shared": {
+      "path": "src/PhysicalProductModule.Domain.Shared/PhysicalProductModule.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "PhysicalProductModule.Domain": {
+      "path": "src/PhysicalProductModule.Domain/PhysicalProductModule.Domain.abppkg",
+      "folder": "src"
+    },
+    "PhysicalProductModule.Application.Contracts": {
+      "path": "src/PhysicalProductModule.Application.Contracts/PhysicalProductModule.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "PhysicalProductModule.Application": {
+      "path": "src/PhysicalProductModule.Application/PhysicalProductModule.Application.abppkg",
+      "folder": "src"
+    },
+    "PhysicalProductModule.EntityFrameworkCore": {
+      "path": "src/PhysicalProductModule.EntityFrameworkCore/PhysicalProductModule.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "PhysicalProductModule.MongoDB": {
+      "path": "src/PhysicalProductModule.MongoDB/PhysicalProductModule.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "PhysicalProductModule.HttpApi": {
+      "path": "src/PhysicalProductModule.HttpApi/PhysicalProductModule.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "PhysicalProductModule.HttpApi.Client": {
+      "path": "src/PhysicalProductModule.HttpApi.Client/PhysicalProductModule.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "PhysicalProductModule.TestBase": {
+      "path": "test/PhysicalProductModule.TestBase/PhysicalProductModule.TestBase.abppkg",
+      "folder": "test"
+    },
+    "PhysicalProductModule.EntityFrameworkCore.Tests": {
+      "path": "test/PhysicalProductModule.EntityFrameworkCore.Tests/PhysicalProductModule.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "PhysicalProductModule.MongoDB.Tests": {
+      "path": "test/PhysicalProductModule.MongoDB.Tests/PhysicalProductModule.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "PhysicalProductModule.Domain.Tests": {
+      "path": "test/PhysicalProductModule.Domain.Tests/PhysicalProductModule.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "PhysicalProductModule.Application.Tests": {
+      "path": "test/PhysicalProductModule.Application.Tests/PhysicalProductModule.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "PhysicalProductModule.HttpApi.Host": {
+      "path": "host/PhysicalProductModule.HttpApi.Host/PhysicalProductModule.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "PhysicalProductModule.Web": {
+      "path": "src/PhysicalProductModule.Web/PhysicalProductModule.Web.abppkg",
+      "folder": "src"
+    },
+    "PhysicalProductModule.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/PhysicalProductModule.HttpApi.Client.ConsoleTestApp/PhysicalProductModule.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "PhysicalProductModule.Web.Host": {
+      "path": "host/PhysicalProductModule.Web.Host/PhysicalProductModule.Web.Host.abppkg",
+      "folder": "host"
+    },
+    "PhysicalProductModule.AuthServer": {
+      "path": "host/PhysicalProductModule.AuthServer/PhysicalProductModule.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "PhysicalProductModule.Host.Shared": {
+      "path": "host/PhysicalProductModule.Host.Shared/PhysicalProductModule.Host.Shared.abppkg",
+      "folder": "host"
+    },
+    "PhysicalProductModule.Web.Unified": {
+      "path": "host/PhysicalProductModule.Web.Unified/PhysicalProductModule.Web.Unified.abppkg",
+      "folder": "host"
+    },
+    "PhysicalProductModule.Blazor": {
+      "path": "src/PhysicalProductModule.Blazor/PhysicalProductModule.Blazor.abppkg",
+      "folder": "src"
+    },
+    "PhysicalProductModule.Blazor.Host": {
+      "path": "host/PhysicalProductModule.Blazor.Host/PhysicalProductModule.Blazor.Host.abppkg",
+      "folder": "host"
+    },
+    "PhysicalProductModule.Blazor.Server": {
+      "path": "src/PhysicalProductModule.Blazor.Server/PhysicalProductModule.Blazor.Server.abppkg",
+      "folder": "src"
+    },
+    "PhysicalProductModule.Blazor.WebAssembly": {
+      "path": "src/PhysicalProductModule.Blazor.WebAssembly/PhysicalProductModule.Blazor.WebAssembly.abppkg",
+      "folder": "src"
+    },
+    "PhysicalProductModule.Blazor.Server.Host": {
+      "path": "host/PhysicalProductModule.Blazor.Server.Host/PhysicalProductModule.Blazor.Server.Host.abppkg",
+      "folder": "host"
+    }
+  }
+}

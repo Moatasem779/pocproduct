@@ -8,6 +8,7 @@ using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
 using Volo.Abp.TenantManagement;
 using BaseProductModule;
+using PhysicalProductModule;
 
 namespace ProductPOCModule;
 
@@ -21,6 +22,7 @@ namespace ProductPOCModule;
     typeof(AbpSettingManagementHttpApiClientModule)
 )]
 [DependsOn(typeof(BaseProductModuleHttpApiClientModule))]
+    [DependsOn(typeof(PhysicalProductModuleHttpApiClientModule))]
     public class ProductPOCModuleHttpApiClientModule : AbpModule
 {
     public const string RemoteServiceName = "Default";

@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProductPOCModule.Application.Contracts\ProductPOCModule.Application.Contracts.csproj" />
-  <ProjectReference Include="..\..\modules\BaseProductModule\src\BaseProductModule.HttpApi.Client\BaseProductModule.HttpApi.Client.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\BaseProductModule\src\BaseProductModule.HttpApi.Client\BaseProductModule.HttpApi.Client.csproj" /><ProjectReference Include="..\..\modules\PhysicalProductModule\src\PhysicalProductModule.HttpApi.Client\PhysicalProductModule.HttpApi.Client.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi.Client" Version="9.1.0" />

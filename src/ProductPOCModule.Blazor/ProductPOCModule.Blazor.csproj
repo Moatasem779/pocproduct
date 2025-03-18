@@ -23,7 +23,7 @@
     <PackageReference Include="AspNetCore.HealthChecks.UI" Version="9.0.0" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="9.0.0" />
-  <ProjectReference Include="..\..\modules\BaseProductModule\src\BaseProductModule.Blazor.Server\BaseProductModule.Blazor.Server.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\BaseProductModule\src\BaseProductModule.Blazor.Server\BaseProductModule.Blazor.Server.csproj" /><ProjectReference Include="..\..\modules\PhysicalProductModule\src\PhysicalProductModule.Blazor.Server\PhysicalProductModule.Blazor.Server.csproj" /></ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ProductPOCModule.Application\ProductPOCModule.Application.csproj" />

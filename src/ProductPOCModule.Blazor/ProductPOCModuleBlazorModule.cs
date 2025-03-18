@@ -52,6 +52,7 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
 using Volo.Abp.Studio.Client.AspNetCore;
 using BaseProductModule.Blazor.Server;
+using PhysicalProductModule.Blazor.Server;
 
 namespace ProductPOCModule.Blazor;
 
@@ -72,6 +73,7 @@ namespace ProductPOCModule.Blazor;
     typeof(AbpSettingManagementBlazorServerModule)
    )]
 [DependsOn(typeof(BaseProductModuleBlazorServerModule))]
+    [DependsOn(typeof(PhysicalProductModuleBlazorServerModule))]
     public class ProductPOCModuleBlazorModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

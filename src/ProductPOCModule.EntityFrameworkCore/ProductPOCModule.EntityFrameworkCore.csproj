@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProductPOCModule.Domain\ProductPOCModule.Domain.csproj" />
-  <ProjectReference Include="..\..\modules\BaseProductModule\src\BaseProductModule.EntityFrameworkCore\BaseProductModule.EntityFrameworkCore.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\BaseProductModule\src\BaseProductModule.EntityFrameworkCore\BaseProductModule.EntityFrameworkCore.csproj" /><ProjectReference Include="..\..\modules\PhysicalProductModule\src\PhysicalProductModule.EntityFrameworkCore\PhysicalProductModule.EntityFrameworkCore.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="9.1.0" />
