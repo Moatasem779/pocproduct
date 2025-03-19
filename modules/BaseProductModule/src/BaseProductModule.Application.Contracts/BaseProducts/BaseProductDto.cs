@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 
 namespace BaseProductModule.BaseProducts;
+/// <summary>
+/// Data transfer object (DTO) for base products, including audit information.
+/// </summary>
 public class BaseProductDto : AuditedEntityDto<int>
 {
     public string Name { get; set; } = string.Empty;
