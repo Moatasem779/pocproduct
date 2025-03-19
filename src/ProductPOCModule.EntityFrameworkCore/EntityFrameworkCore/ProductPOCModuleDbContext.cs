@@ -16,6 +16,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using BaseProductModule.EntityFrameworkCore;
 using PhysicalProductModule.EntityFrameworkCore;
+using PhysicalProductModule.Entities;
 
 namespace ProductPOCModule.EntityFrameworkCore;
 
@@ -58,6 +59,7 @@ public class ProductPOCModuleDbContext :
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
     #endregion
+    public DbSet<PhysicalProduct> PhysicalProducts { get; set; }
 
     public ProductPOCModuleDbContext(DbContextOptions<ProductPOCModuleDbContext> options)
         : base(options)
@@ -79,7 +81,7 @@ public class ProductPOCModuleDbContext :
         builder.ConfigureOpenIddict();
         builder.ConfigureTenantManagement();
         builder.ConfigureBlobStoring();
-        
+
         /* Configure your own tables/entities inside here */
 
         //builder.Entity<YourEntity>(b =>
@@ -88,6 +90,7 @@ public class ProductPOCModuleDbContext :
         //    b.ConfigureByConvention(); //auto configure for the base class props
         //    //...
         //});
+
         builder.ConfigureBaseProductModule();
             builder.ConfigurePhysicalProductModule();
         }

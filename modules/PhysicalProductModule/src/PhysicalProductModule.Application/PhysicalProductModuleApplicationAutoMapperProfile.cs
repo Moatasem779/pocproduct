@@ -1,4 +1,8 @@
 ﻿using AutoMapper;
+using BaseProductModule.BaseProducts;
+using BaseProductModule.Entities;
+using PhysicalProductModule.Entities;
+using PhysicalProductModule.PhysicalProducts;
 
 namespace PhysicalProductModule;
 
@@ -6,8 +10,21 @@ public class PhysicalProductModuleApplicationAutoMapperProfile : Profile
 {
     public PhysicalProductModuleApplicationAutoMapperProfile()
     {
-        /* You can configure your AutoMapper mapping configuration here.
-         * Alternatively, you can split your mapping configurations
-         * into multiple profile classes for a better organization. */
+        CreateMap<CreateUpdatePhysicalProductDto, PhysicalProductDto>()
+         .ForMember(dest => dest.LastModificationTime, opt => opt.Ignore())
+         .ForMember(dest => dest.LastModifierId, opt => opt.Ignore())
+        .ForMember(dest => dest.CreationTime, opt => opt.Ignore())
+        .ForMember(dest => dest.CreatorId, opt => opt.Ignore())
+        .ForMember(dest => dest.Id, opt => opt.Ignore()).ReverseMap();
+        CreateMap<CreateUpdatePhysicalProductDto, PhysicalProduct>()
+            .ForMember(dest => dest.IsDeleted, opt => opt.Ignore())
+            .ForMember(dest => dest.DeleterId, opt => opt.Ignore())
+            .ForMember(dest => dest.DeletionTime, opt => opt.Ignore())
+             .ForMember(dest => dest.LastModificationTime, opt => opt.Ignore())
+            .ForMember(dest => dest.CreationTime, opt => opt.Ignore())
+            .ForMember(dest => dest.CreatorId, opt => opt.Ignore())
+            .ForMember(dest => dest.LastModifierId, opt => opt.Ignore())
+            .ForMember(dest => dest.Id, opt => opt.Ignore()).ReverseMap();
+        CreateMap<PhysicalProduct, PhysicalProductDto>().ReverseMap();
     }
 }

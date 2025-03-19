@@ -1,0 +1,14 @@
+﻿{
+  "applications": {
+    "Product_POC": {
+      "type": "dotnet-project",
+      "launchUrl": "https://localhost:44397",
+      "healthCheckEndpoint": "/health-status",
+      "healthUiEndpoint": "/health-ui",
+      "path": "../../Product_POC/Product_POC.csproj",
+      "execution": {
+        "order": 0
+      }
+    }
+  }
+}

@@ -1,5 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BaseProductModule.Entities;
+using BaseProductModule;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
+using PhysicalProductModule.Entities;
 
 namespace PhysicalProductModule.EntityFrameworkCore;
 
@@ -29,5 +33,10 @@ public static class PhysicalProductModuleDbContextModelCreatingExtensions
             b.HasIndex(q => q.CreationTime);
         });
         */
+        builder.Entity<PhysicalProduct>(b =>
+        {
+            b.ToTable(PhysicalProductModuleDbProperties.DbTablePrefix + "PhysicalProducts");
+            b.ConfigureByConvention(); //auto configure for the base class props
+        });
     }
 }

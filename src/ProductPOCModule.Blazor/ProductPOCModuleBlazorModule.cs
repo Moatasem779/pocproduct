@@ -54,6 +54,7 @@ using Volo.Abp.Studio.Client.AspNetCore;
 using BaseProductModule.Blazor.Server;
 using PhysicalProductModule.Blazor.Server;
 using BaseProductModule;
+using PhysicalProductModule;
 
 namespace ProductPOCModule.Blazor;
 
@@ -277,6 +278,10 @@ namespace ProductPOCModule.Blazor;
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
             options.ConventionalControllers.Create(typeof(BaseProductModuleApplicationModule).Assembly);
+        });
+        Configure<AbpAspNetCoreMvcOptions>(options =>
+        {
+            options.ConventionalControllers.Create(typeof(PhysicalProductModuleApplicationModule).Assembly);
         });
     }
 
