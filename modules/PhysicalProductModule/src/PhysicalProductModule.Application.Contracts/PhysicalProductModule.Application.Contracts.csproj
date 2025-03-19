@@ -11,6 +11,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="9.1.0" />
     <PackageReference Include="Volo.Abp.Authorization" Version="9.1.0" />
+    <ProjectReference Include="..\..\..\BaseProductModule\src\BaseProductModule.Application.Contracts\BaseProductModule.Application.Contracts.csproj" />
     <ProjectReference Include="..\PhysicalProductModule.Domain.Shared\PhysicalProductModule.Domain.Shared.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PhysicalProductModule.Entities;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -10,7 +11,7 @@ public class PhysicalProductModuleDbContext : AbpDbContext<PhysicalProductModule
     /* Add DbSet for each Aggregate Root here. Example:
      * public DbSet<Question> Questions { get; set; }
      */
-
+    public DbSet<PhysicalProduct> PhysicalProducts { get; set; }
     public PhysicalProductModuleDbContext(DbContextOptions<PhysicalProductModuleDbContext> options)
         : base(options)
     {
