@@ -23,31 +23,31 @@ public class BaseProductController : BaseProductModuleController, IBaseProductAp
     }
 
     [HttpPost]
-    public Task<BaseProductDto> CreateAsync(CreateUpdateBaseProductDto input)
+    public async Task<BaseProductDto> CreateAsync(CreateUpdateBaseProductDto input)
     {
-        throw new NotImplementedException();
+       return await _baseproductAppService.CreateAsync(input);
     }
 
-    [HttpDelete]
+    [HttpDelete("deletebaseproducts/{id}")]
 
     public Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        return _baseproductAppService.DeleteAsync(id);
     }
     [HttpGet("getbaseproduct/{id}")]
 
     public Task<BaseProductDto> GetAsync(int id)
     {
-        throw new NotImplementedException();
+        return _baseproductAppService.GetAsync(id);
     }
-    [HttpGet]
+    [HttpGet("getbaseproducts")]
     public Task<PagedResultDto<BaseProductDto>> GetListAsync(PagedAndSortedResultRequestDto input)
     {
-        throw new NotImplementedException();
+        return _baseproductAppService.GetListAsync(input);
     }
     [HttpPatch("updatebaseproduct/{id}")]
     public Task<BaseProductDto> UpdateAsync(int id, CreateUpdateBaseProductDto input)
     {
-        throw new NotImplementedException();
+        return _baseproductAppService.UpdateAsync(id, input);
     }
 }
