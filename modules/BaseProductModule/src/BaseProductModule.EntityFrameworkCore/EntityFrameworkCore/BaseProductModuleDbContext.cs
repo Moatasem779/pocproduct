@@ -22,7 +22,11 @@ public class BaseProductModuleDbContext : AbpDbContext<BaseProductModuleDbContex
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-
+        builder.Entity<BaseProduct>(b =>
+        {
+            b.UseTpcMappingStrategy();
+            b.Ignore(e => e.IsDeleted); // 👈 Ignore soft delete on base entity
+        });
         builder.ConfigureBaseProductModule();
     }
 }

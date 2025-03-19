@@ -17,6 +17,7 @@ using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using BaseProductModule.EntityFrameworkCore;
 using PhysicalProductModule.EntityFrameworkCore;
 using PhysicalProductModule.Entities;
+using BaseProductModule.Entities;
 
 namespace ProductPOCModule.EntityFrameworkCore;
 
@@ -59,7 +60,6 @@ public class ProductPOCModuleDbContext :
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
     #endregion
-    public DbSet<PhysicalProduct> PhysicalProducts { get; set; }
 
     public ProductPOCModuleDbContext(DbContextOptions<ProductPOCModuleDbContext> options)
         : base(options)
@@ -90,6 +90,14 @@ public class ProductPOCModuleDbContext :
         //    b.ConfigureByConvention(); //auto configure for the base class props
         //    //...
         //});
+        builder.Entity<BaseProduct>(b =>
+        {
+            b.UseTpcMappingStrategy();
+        });
+        builder.Entity<PhysicalProduct>(b =>
+        {
+            b.UseTpcMappingStrategy();
+        });
 
         builder.ConfigureBaseProductModule();
             builder.ConfigurePhysicalProductModule();

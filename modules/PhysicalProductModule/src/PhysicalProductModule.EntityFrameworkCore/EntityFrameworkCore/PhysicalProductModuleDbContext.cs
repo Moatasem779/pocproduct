@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BaseProductModule.Entities;
+using Microsoft.EntityFrameworkCore;
 using PhysicalProductModule.Entities;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -21,7 +22,10 @@ public class PhysicalProductModuleDbContext : AbpDbContext<PhysicalProductModule
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-
-        builder.ConfigurePhysicalProductModule();
+        builder.Entity<PhysicalProduct>(b =>
+        {
+            b.UseTpcMappingStrategy();
+            b.HasQueryFilter(e => !EF.Property<bool>(e, "IsDeleted")); 
+        }); builder.ConfigurePhysicalProductModule();
     }
 }
