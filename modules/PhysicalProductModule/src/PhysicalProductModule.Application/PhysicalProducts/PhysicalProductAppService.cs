@@ -11,6 +11,9 @@ using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories;
 
 namespace PhysicalProductModule.PhysicalProducts;
+/// <summary>
+/// Application service for managing physical products.
+/// </summary>
 public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhysicalProductAppService
 {
     private readonly IRepository<PhysicalProduct, int> _repository;
@@ -18,7 +21,7 @@ public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhy
     {
         _repository = repository;
     }
-
+    /// <inheritdoc/>
     public async Task<PhysicalProductDto> CreateAsync(CreateUpdatePhysicalProductDto input)
     {
         var physicalProduct = ObjectMapper.Map<CreateUpdatePhysicalProductDto, PhysicalProduct>(input);
@@ -26,18 +29,19 @@ public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhy
         return ObjectMapper.Map<PhysicalProduct, PhysicalProductDto>(result);
         throw new NotImplementedException();
     }
+    /// <inheritdoc/>
     public async Task DeleteAsync(int id)
     {
         PhysicalProduct existBaseProduct = await CheckEntityIsFound(id);
         await _repository.DeleteAsync(existBaseProduct);
     }
-
+    /// <inheritdoc/>
     public async Task<PhysicalProductDto> GetAsync(int id)
     {
         PhysicalProduct? existBaseProduct = await CheckEntityIsFound(id);
         return ObjectMapper.Map<PhysicalProduct, PhysicalProductDto>(existBaseProduct);
     }
-
+    /// <inheritdoc/>
     public async Task<PagedResultDto<PhysicalProductDto>> GetListAsync(PagedAndSortedResultRequestDto input)
     {
         var result = await _repository.GetPagedListAsync(input.SkipCount, input.MaxResultCount, input.Sorting);
@@ -50,6 +54,7 @@ public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhy
             TotalCount = baseProductBaseDto.Count
         };
     }
+    /// <inheritdoc/>
     public async Task<PhysicalProductDto> UpdateAsync(int id, CreateUpdatePhysicalProductDto input)
     {
         PhysicalProduct? existBaseProduct = await CheckEntityIsFound(id);
@@ -61,7 +66,7 @@ public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhy
         return ObjectMapper.Map<PhysicalProduct, PhysicalProductDto>(updateBaseProduct);
         throw new NotImplementedException();
     }
-
+    /// <inheritdoc/>
     private async Task<PhysicalProduct> CheckEntityIsFound(int id)
     {
         var existBaseProduct = await _repository.FirstOrDefaultAsync(x => x.Id == id);
