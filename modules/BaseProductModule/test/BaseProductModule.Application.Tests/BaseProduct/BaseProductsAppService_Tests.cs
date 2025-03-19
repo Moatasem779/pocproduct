@@ -28,8 +28,9 @@ public class BaseProductsAppService_Tests<TStartupModule> : BaseProductModuleApp
     {
         var result =await _baseProductAppService.GetListAsync(new PagedAndSortedResultRequestDto
         {
-            MaxResultCount = 10000,
-            SkipCount = 0
+            MaxResultCount = 1000,
+            SkipCount = 0,
+            Sorting="Id"
 
         });
         Assert.Equal(3, result.TotalCount);
