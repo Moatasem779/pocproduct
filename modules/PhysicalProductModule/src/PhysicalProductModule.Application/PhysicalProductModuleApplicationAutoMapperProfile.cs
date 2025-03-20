@@ -26,5 +26,12 @@ public class PhysicalProductModuleApplicationAutoMapperProfile : Profile
             .ForMember(dest => dest.LastModifierId, opt => opt.Ignore())
             .ForMember(dest => dest.Id, opt => opt.Ignore()).ReverseMap();
         CreateMap<PhysicalProduct, PhysicalProductDto>().ReverseMap();
+
+
+        CreateMap<BaseProductDto, PhysicalProductDto>()
+            .MapExtraProperties().ReverseMap();
+
+        CreateMap<CreateUpdateBaseProductDto, PhysicalProduct>()
+            .MapExtraProperties().ReverseMap();
     }
 }
