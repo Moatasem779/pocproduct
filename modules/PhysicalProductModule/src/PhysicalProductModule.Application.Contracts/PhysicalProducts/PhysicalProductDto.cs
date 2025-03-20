@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 using Volo.Abp.Data;
 
 namespace PhysicalProductModule.PhysicalProducts;
-public class PhysicalProductDto : BaseProductDto , IHasExtraProperties
+/// <summary>
+/// Data transfer object (DTO) for physical products.
+/// Inherits properties from <see cref="BaseProductDto"/>.
+/// </summary>
+=public class PhysicalProductDto : BaseProductDto , IHasExtraProperties
 {
     public int Stock {  get; set; }
     public ExtraPropertyDictionary ExtraProperties { get; set; }

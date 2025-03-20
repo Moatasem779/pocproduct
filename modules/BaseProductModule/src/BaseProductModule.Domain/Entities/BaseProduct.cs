@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using Volo.Abp.Domain.Entities.Auditing;
 
 namespace BaseProductModule.Entities;
-
+/// <summary>
+/// Represents the base product entity with full auditing features.
+/// </summary>
 public class BaseProduct : FullAuditedEntity<int>
 {
     public string Name { get; set; } = string.Empty;

@@ -7,6 +7,9 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.Data;
 
 namespace BaseProductModule.BaseProducts;
+/// <summary>
+/// Data transfer object for creating or updating a base product.
+/// </summary>
 public class CreateUpdateBaseProductDto : IHasExtraProperties
 {
     public string Name { get; set; } = string.Empty;

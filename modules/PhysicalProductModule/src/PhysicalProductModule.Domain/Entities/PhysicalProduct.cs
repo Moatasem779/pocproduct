@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 using Volo.Abp.Data;
 
 namespace PhysicalProductModule.Entities;
+
+/// <summary>
+/// Represents a physical product entity.
+/// Inherits properties from <see cref="BaseProduct"/>.
+/// </summary>
 public class PhysicalProduct : BaseProduct , IHasExtraProperties
 {
     public int Stock {  get; set; }

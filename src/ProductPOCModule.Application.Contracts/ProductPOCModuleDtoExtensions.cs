@@ -23,6 +23,8 @@ public static class ProductPOCModuleDtoExtensions
                  * See the documentation for more:
                  * https://docs.abp.io/en/abp/latest/Object-Extensions
                  */
+
         });
+
     }
 }

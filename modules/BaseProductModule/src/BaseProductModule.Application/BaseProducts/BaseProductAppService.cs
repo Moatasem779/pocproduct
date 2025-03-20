@@ -11,6 +11,7 @@ using Volo.Abp.Domain.Repositories;
 using Volo.Abp.ObjectMapping;
 
 namespace BaseProductModule.BaseProducts;
+/// <inheritdoc/>
 public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAppService 
 {
     private readonly IRepository<BaseProduct, int> _repository;
@@ -18,27 +19,26 @@ public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAp
     {
         _repository = repository;
     }
-
+    /// <inheritdoc/>
     public async Task<BaseProductDto> CreateAsync(CreateUpdateBaseProductDto input)
     {
         var baseProduct = ObjectMapper.Map<CreateUpdateBaseProductDto, BaseProduct>(input);
         var result = await _repository.InsertAsync(baseProduct);
         return ObjectMapper.Map<BaseProduct, BaseProductDto>(result);
-        throw new NotImplementedException();
     }
-
+    /// <inheritdoc/>
     public async Task DeleteAsync(int id)
     {
         BaseProduct existBaseProduct = await CheckEntityIsFound(id);
         await _repository.DeleteAsync(existBaseProduct);
     }
-
+    /// <inheritdoc/>
     public async Task<BaseProductDto> GetAsync(int id)
     {
         BaseProduct? existBaseProduct = await CheckEntityIsFound(id);
         return ObjectMapper.Map<BaseProduct, BaseProductDto>(existBaseProduct);
     }
-
+    /// <inheritdoc/>
     public async Task<PagedResultDto<BaseProductDto>> GetListAsync(PagedAndSortedResultRequestDto input)
     {
         var result = await _repository.GetPagedListAsync(input.SkipCount , input.MaxResultCount , input.Sorting);
@@ -52,7 +52,7 @@ public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAp
         };
 
     }
-
+    /// <inheritdoc/>
     public async Task<BaseProductDto> UpdateAsync(int id, CreateUpdateBaseProductDto input)
     {
         BaseProduct? existBaseProduct = await CheckEntityIsFound(id);
@@ -62,9 +62,8 @@ public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAp
         var result = await _repository.UpdateAsync(updateBaseProduct);
 
         return ObjectMapper.Map<BaseProduct, BaseProductDto>(updateBaseProduct);
-        throw new NotImplementedException();   
     }
-
+    /// <inheritdoc/>
     private async Task<BaseProduct> CheckEntityIsFound(int id)
     {
         var existBaseProduct = await _repository.FirstOrDefaultAsync(x => x.Id == id);

@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 using Volo.Abp.Data;
 
 namespace PhysicalProductModule.PhysicalProducts;
-public class CreateUpdatePhysicalProductDto : CreateUpdateBaseProductDto 
+/// <summary>
+/// Data transfer object (DTO) for creating or updating a physical product.
+/// Inherits properties from <see cref="CreateUpdateBaseProductDto"/>.
+/// </summary>
+public class CreateUpdatePhysicalProductDto : CreateUpdateBaseProductDto
 {
     public int Stock {  get; set; }
 }
