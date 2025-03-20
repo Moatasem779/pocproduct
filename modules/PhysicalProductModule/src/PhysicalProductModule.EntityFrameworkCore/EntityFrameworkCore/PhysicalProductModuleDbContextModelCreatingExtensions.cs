@@ -35,7 +35,7 @@ public static class PhysicalProductModuleDbContextModelCreatingExtensions
         */
         builder.Entity<PhysicalProduct>(b =>
         {
-            b.ToTable(PhysicalProductModuleDbProperties.DbTablePrefix + "PhysicalProducts");
+            //b.ToTable(PhysicalProductModuleDbProperties.DbTablePrefix + "PhysicalProducts");
             b.ConfigureByConvention(); //auto configure for the base class props
         });
     }
