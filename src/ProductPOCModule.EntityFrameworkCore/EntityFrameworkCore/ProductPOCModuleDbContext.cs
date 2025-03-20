@@ -93,14 +93,12 @@ public class ProductPOCModuleDbContext :
         //});
         builder.Entity<BaseProduct>(b =>
         {
-            b.UseTphMappingStrategy();
-          
+            b.UseTphMappingStrategy()
+             .HasDiscriminator(e => e.Discriminator)
+             .HasValue<PhysicalProduct>("PhysicalProduct")
+             .HasValue<BaseProduct>("BaseProduct");          
         });
-        builder.Entity<PhysicalProduct>(b =>
-        {
-            b.UseTphMappingStrategy();
-        });
-
+   
         builder.ConfigureBaseProductModule();
             builder.ConfigurePhysicalProductModule();
         }

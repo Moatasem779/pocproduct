@@ -26,6 +26,7 @@ public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhy
     public async Task<PhysicalProductDto> CreateAsync(CreateUpdatePhysicalProductDto input)
     {
         var physicalProduct = ObjectMapper.Map<CreateUpdatePhysicalProductDto, PhysicalProduct>(input);
+        physicalProduct.Discriminator = typeof(PhysicalProduct).Name;
         var result = await _repository.InsertAsync(physicalProduct);
         return ObjectMapper.Map<BaseProduct, PhysicalProductDto>(result);
     }

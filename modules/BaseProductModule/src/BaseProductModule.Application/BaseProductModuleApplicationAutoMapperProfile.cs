@@ -23,7 +23,9 @@ public class BaseProductModuleApplicationAutoMapperProfile : Profile
             .ForMember(dest => dest.CreationTime, opt => opt.Ignore())
             .ForMember(dest => dest.CreatorId, opt => opt.Ignore())
             .ForMember(dest => dest.LastModifierId, opt => opt.Ignore())
+            .ForMember(dest => dest.Discriminator, opt => opt.Ignore())
             .ForMember(dest => dest.Id, opt => opt.Ignore()).ReverseMap();
-        CreateMap<BaseProduct, BaseProductDto>().ReverseMap();
+        CreateMap<BaseProduct, BaseProductDto>()
+            .MapExtraProperties().ReverseMap() ;
     }
 }

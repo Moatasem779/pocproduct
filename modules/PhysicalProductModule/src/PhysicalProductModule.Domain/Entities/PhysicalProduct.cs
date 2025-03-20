@@ -14,5 +14,5 @@ namespace PhysicalProductModule.Entities;
 /// </summary>
 public class PhysicalProduct : BaseProduct 
 {
-    public int Stock {  get; set; }
+
 }

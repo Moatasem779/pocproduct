@@ -23,6 +23,7 @@ public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAp
     public async Task<BaseProductDto> CreateAsync(CreateUpdateBaseProductDto input)
     {
         var baseProduct = ObjectMapper.Map<CreateUpdateBaseProductDto, BaseProduct>(input);
+        baseProduct.Discriminator = typeof(BaseProduct).Name;
         var result = await _repository.InsertAsync(baseProduct);
         return ObjectMapper.Map<BaseProduct, BaseProductDto>(result);
     }

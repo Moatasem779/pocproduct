@@ -25,7 +25,7 @@ public class BaseProductModuleDbContext : AbpDbContext<BaseProductModuleDbContex
         builder.Entity<BaseProduct>(b =>
         {
            
-             b.UseTphMappingStrategy();
+           //  b.UseTphMappingStrategy();
             b.Ignore(e => e.IsDeleted); // 👈 Ignore soft delete on base entity
         });
         builder.ConfigureBaseProductModule();
