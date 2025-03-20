@@ -11,7 +11,7 @@ namespace PhysicalProductModule.PhysicalProducts;
 /// Data transfer object (DTO) for physical products.
 /// Inherits properties from <see cref="BaseProductDto"/>.
 /// </summary>
-=public class PhysicalProductDto : BaseProductDto , IHasExtraProperties
+public class PhysicalProductDto : BaseProductDto , IHasExtraProperties
 {
     public int Stock {  get; set; }
     public ExtraPropertyDictionary ExtraProperties { get; set; }
