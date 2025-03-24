@@ -28,7 +28,7 @@ public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAp
     {
         var baseProduct = ObjectMapper.Map<CreateUpdateBaseProductDto, BaseProduct>(input);
         baseProduct.Discriminator = typeof(BaseProduct).Name;
-        var result = await _repository.InsertAsync(baseProduct);
+        var result = await _repository.InsertAsync(baseProduct,true);
         return ObjectMapper.Map<BaseProduct, BaseProductDto>(result);
     }
     /// <inheritdoc/>
@@ -64,7 +64,7 @@ public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAp
 
         var updateBaseProduct = ObjectMapper.Map<CreateUpdateBaseProductDto, BaseProduct>(input, existBaseProduct);
 
-        var result = await _repository.UpdateAsync(updateBaseProduct);
+        var result = await _repository.UpdateAsync(updateBaseProduct,true);
 
         return ObjectMapper.Map<BaseProduct, BaseProductDto>(updateBaseProduct);
     }

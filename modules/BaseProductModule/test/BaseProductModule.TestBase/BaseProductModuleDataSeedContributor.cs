@@ -33,14 +33,21 @@ public class BaseProductModuleDataSeedContributor : IDataSeedContributor, ITrans
         if(! await _productRepostory.AnyAsync())
         {
             var products = new List<BaseProduct>{
-                new BaseProduct { Name = "Laptop", Description = "High-end gaming laptop", Price = 1500.99m },
-                new BaseProduct { Name = "Smartphone", Description = "Latest smartphone with AI features", Price = 999.99m },
-                new BaseProduct { Name = "Tablet", Description = "Lightweight tablet for work and play", Price = 499.49m },
+                new BaseProduct { Name = "Laptop", Description = "High-end gaming laptop", Price = 1500.99m ,   ExtraProperties = new ExtraPropertyDictionary
+                                {
+                                    ["Brand"] = "ASUS"
+                                }},
+                new BaseProduct { Name = "Smartphone", Description = "Latest smartphone with AI features", Price = 999.99m ,   ExtraProperties =new ExtraPropertyDictionary
+                                {
+                                    ["Brand"] = "DELL"
+                                } },
+                new BaseProduct { Name = "Tablet", Description = "Lightweight tablet for work and play", Price = 499.49m  ,   ExtraProperties =new ExtraPropertyDictionary
+                                {
+                                    ["Brand"] = "HP"
+                                }},
 
             };
             await _productRepostory.InsertManyAsync(products);
-
         }
-        
     }
 }

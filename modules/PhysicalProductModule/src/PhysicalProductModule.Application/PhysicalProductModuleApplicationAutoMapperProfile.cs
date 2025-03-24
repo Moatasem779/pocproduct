@@ -53,10 +53,11 @@ public class PhysicalProductModuleApplicationAutoMapperProfile : Profile
 
         /// <summary>
         /// Maps <see cref="BaseProductDto"/> to <see cref="PhysicalProductDto"/>.
-        /// Includes extra property mappings.
         /// </summary>
         CreateMap<BaseProductDto, PhysicalProductDto>()
-            .MapExtraProperties()
+            .ReverseMap();        
+        ///
+        CreateMap<BaseProduct, PhysicalProductDto>()
             .ReverseMap();
 
     }

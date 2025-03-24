@@ -30,7 +30,7 @@ public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhy
     {
         var physicalProduct = ObjectMapper.Map<CreateUpdatePhysicalProductDto, PhysicalProduct>(input);
         physicalProduct.Discriminator = typeof(PhysicalProduct).Name;
-        var result = await _repository.InsertAsync(physicalProduct);
+        var result = await _repository.InsertAsync(physicalProduct,true);
         return ObjectMapper.Map<BaseProduct, PhysicalProductDto>(result);
     }
     /// <inheritdoc/>
@@ -48,8 +48,9 @@ public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhy
     /// <inheritdoc/>
     public async Task<PagedResultDto<PhysicalProductDto>> GetListAsync(PagedAndSortedResultRequestDto input)
     {
-        var result = await _repository.GetPagedListAsync(input.SkipCount, input.MaxResultCount, input.Sorting);
-
+        var query = await _repository.GetQueryableAsync();
+        var list = query.Where(x=>x.Discriminator == typeof(PhysicalProduct).Name);
+        var result = list.Skip(input.SkipCount).Take(input.MaxResultCount).ToList();
         var baseProductBaseDto = ObjectMapper.Map<List<BaseProduct>, List<PhysicalProductDto>>(result);
 
         return new PagedResultDto<PhysicalProductDto>
@@ -65,7 +66,7 @@ public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhy
 
         var updateBaseProduct = ObjectMapper.Map<CreateUpdatePhysicalProductDto, BaseProduct>(input, existBaseProduct);
 
-        var result = await _repository.UpdateAsync(updateBaseProduct);
+        var result = await _repository.UpdateAsync(updateBaseProduct, true);
 
         return ObjectMapper.Map<BaseProduct, PhysicalProductDto>(updateBaseProduct);
     }
