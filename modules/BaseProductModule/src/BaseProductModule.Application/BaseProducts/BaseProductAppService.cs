@@ -64,7 +64,12 @@ public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAp
 
         return ObjectMapper.Map<BaseProduct, BaseProductDto>(updateBaseProduct);
     }
-    /// <inheritdoc/>
+    /// <summary>
+    /// Ensures that a <see cref="BaseProduct"/> entity with the given ID exists in the repository.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    /// <exception cref="EntityNotFoundException"></exception>
     private async Task<BaseProduct> CheckEntityIsFound(int id)
     {
         var existBaseProduct = await _repository.FirstOrDefaultAsync(x => x.Id == id);
