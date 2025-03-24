@@ -22,7 +22,7 @@ public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhy
     {
         _repository = repository;
     }
-
+    /// <inheritdoc/>
     public async Task<PhysicalProductDto> CreateAsync(CreateUpdatePhysicalProductDto input)
     {
         var physicalProduct = ObjectMapper.Map<CreateUpdatePhysicalProductDto, PhysicalProduct>(input);
@@ -30,18 +30,19 @@ public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhy
         var result = await _repository.InsertAsync(physicalProduct);
         return ObjectMapper.Map<BaseProduct, PhysicalProductDto>(result);
     }
+    /// <inheritdoc/>
     public async Task DeleteAsync(int id)
     {
         BaseProduct existBaseProduct = await CheckEntityIsFound(id);
         await _repository.DeleteAsync(existBaseProduct);
     }
-
+    /// <inheritdoc/>
     public async Task<PhysicalProductDto> GetAsync(int id)
     {
         BaseProduct? existBaseProduct = await CheckEntityIsFound(id);
         return ObjectMapper.Map<BaseProduct, PhysicalProductDto>(existBaseProduct);
     }
-
+    /// <inheritdoc/>
     public async Task<PagedResultDto<PhysicalProductDto>> GetListAsync(PagedAndSortedResultRequestDto input)
     {
         var result = await _repository.GetPagedListAsync(input.SkipCount, input.MaxResultCount, input.Sorting);
@@ -54,6 +55,7 @@ public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhy
             TotalCount = baseProductBaseDto.Count
         };
     }
+    /// <inheritdoc/>
     public async Task<PhysicalProductDto> UpdateAsync(int id, CreateUpdatePhysicalProductDto input)
     {
         BaseProduct? existBaseProduct = await CheckEntityIsFound(id);
@@ -64,13 +66,17 @@ public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhy
 
         return ObjectMapper.Map<BaseProduct, PhysicalProductDto>(updateBaseProduct);
     }
-
-  
+    /// <summary>
+    /// Ensures that a <see cref="BaseProduct"/> entity with the given ID exists in the repository.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    /// <exception cref="EntityNotFoundException"></exception>
     private async Task<BaseProduct> CheckEntityIsFound(int id)
     {
-        var existBaseProduct = await _repository.FirstOrDefaultAsync(x => x.Id == id);
-        if (existBaseProduct == null)
-            throw new EntityNotFoundException(typeof(PhysicalProduct));
-        return existBaseProduct;
+        var existingBaseProduct = await _repository.FirstOrDefaultAsync(x => x.Id == id);
+        if (existingBaseProduct == null)
+            throw new EntityNotFoundException(typeof(BaseProduct), id);
+        return existingBaseProduct;
     }
 }
