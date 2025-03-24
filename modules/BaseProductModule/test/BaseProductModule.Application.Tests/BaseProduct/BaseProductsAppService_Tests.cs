@@ -31,7 +31,7 @@ public class BaseProductsAppService_Tests<TStartupModule> : BaseProductModuleApp
             MaxResultCount = 1000,
             SkipCount = 0,
             Sorting="Id"
-
+                /////////
         });
         Assert.Equal(3, result.TotalCount);
 
