@@ -11,7 +11,11 @@ using Volo.Abp.Domain.Repositories;
 using Volo.Abp.ObjectMapping;
 
 namespace BaseProductModule.BaseProducts;
-/// <inheritdoc/>
+/// <summary>
+/// Application service for managing base products.
+/// Inherits from <see cref="BaseProductModuleAppService"/> and implements <see cref="IBaseProductAppService"/>.
+/// Provides business logic and operations related to base products.
+/// </summary>
 public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAppService 
 {
     private readonly IRepository<BaseProduct, int> _repository;
@@ -23,6 +27,7 @@ public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAp
     public async Task<BaseProductDto> CreateAsync(CreateUpdateBaseProductDto input)
     {
         var baseProduct = ObjectMapper.Map<CreateUpdateBaseProductDto, BaseProduct>(input);
+        baseProduct.Discriminator = typeof(BaseProduct).Name;
         var result = await _repository.InsertAsync(baseProduct);
         return ObjectMapper.Map<BaseProduct, BaseProductDto>(result);
     }
@@ -63,7 +68,12 @@ public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAp
 
         return ObjectMapper.Map<BaseProduct, BaseProductDto>(updateBaseProduct);
     }
-    /// <inheritdoc/>
+    /// <summary>
+    /// Ensures that a <see cref="BaseProduct"/> entity with the given ID exists in the repository.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    /// <exception cref="EntityNotFoundException"></exception>
     private async Task<BaseProduct> CheckEntityIsFound(int id)
     {
         var existBaseProduct = await _repository.FirstOrDefaultAsync(x => x.Id == id);

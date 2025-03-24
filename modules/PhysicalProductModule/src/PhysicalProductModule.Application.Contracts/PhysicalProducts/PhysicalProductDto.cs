@@ -13,7 +13,6 @@ namespace PhysicalProductModule.PhysicalProducts;
 /// </summary>
 public class PhysicalProductDto : BaseProductDto , IHasExtraProperties
 {
-    public int Stock {  get; set; }
     public ExtraPropertyDictionary ExtraProperties { get; set; }
 
 

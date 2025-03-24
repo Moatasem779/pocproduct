@@ -12,9 +12,7 @@ namespace PhysicalProductModule.Entities;
 /// Represents a physical product entity.
 /// Inherits properties from <see cref="BaseProduct"/>.
 /// </summary>
-public class PhysicalProduct : BaseProduct , IHasExtraProperties
+public class PhysicalProduct : BaseProduct 
 {
-    public int Stock {  get; set; }
 
-    public ExtraPropertyDictionary ExtraProperties { get; set; }
 }

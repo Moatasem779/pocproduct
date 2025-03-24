@@ -6,32 +6,59 @@ using PhysicalProductModule.PhysicalProducts;
 
 namespace PhysicalProductModule;
 
+/// <summary>
+/// AutoMapper profile for mapping between PhysicalProduct-related DTOs and entities.
+/// </summary>
 public class PhysicalProductModuleApplicationAutoMapperProfile : Profile
 {
+    /// <summary>
+    /// Constructor of the <see cref="PhysicalProductModuleApplicationAutoMapperProfile"/> class.
+    /// Defines mapping configurations for PhysicalProduct entities and DTOs.
+    /// </summary>
     public PhysicalProductModuleApplicationAutoMapperProfile()
     {
+        /// <summary>
+        /// Maps <see cref="CreateUpdatePhysicalProductDto"/> to <see cref="PhysicalProductDto"/>.
+        /// Ignores audit properties and identity fields.
+        /// </summary>
         CreateMap<CreateUpdatePhysicalProductDto, PhysicalProductDto>()
-         .ForMember(dest => dest.LastModificationTime, opt => opt.Ignore())
-         .ForMember(dest => dest.LastModifierId, opt => opt.Ignore())
-        .ForMember(dest => dest.CreationTime, opt => opt.Ignore())
-        .ForMember(dest => dest.CreatorId, opt => opt.Ignore())
-        .ForMember(dest => dest.Id, opt => opt.Ignore()).ReverseMap();
+            .ForMember(dest => dest.LastModificationTime, opt => opt.Ignore())
+            .ForMember(dest => dest.LastModifierId, opt => opt.Ignore())
+            .ForMember(dest => dest.CreationTime, opt => opt.Ignore())
+            .ForMember(dest => dest.CreatorId, opt => opt.Ignore())
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ReverseMap();
+
+        /// <summary>
+        /// Maps <see cref="CreateUpdatePhysicalProductDto"/> to <see cref="PhysicalProduct"/>.
+        /// Ignores soft-delete and audit properties.
+        /// </summary>
         CreateMap<CreateUpdatePhysicalProductDto, PhysicalProduct>()
             .ForMember(dest => dest.IsDeleted, opt => opt.Ignore())
             .ForMember(dest => dest.DeleterId, opt => opt.Ignore())
             .ForMember(dest => dest.DeletionTime, opt => opt.Ignore())
-             .ForMember(dest => dest.LastModificationTime, opt => opt.Ignore())
+            .ForMember(dest => dest.LastModificationTime, opt => opt.Ignore())
             .ForMember(dest => dest.CreationTime, opt => opt.Ignore())
             .ForMember(dest => dest.CreatorId, opt => opt.Ignore())
             .ForMember(dest => dest.LastModifierId, opt => opt.Ignore())
-            .ForMember(dest => dest.Id, opt => opt.Ignore()).ReverseMap();
-        CreateMap<PhysicalProduct, PhysicalProductDto>().ReverseMap();
+            .ForMember(dest => dest.Discriminator, opt => opt.Ignore())
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ReverseMap();
 
+        /// <summary>
+        /// Maps <see cref="PhysicalProduct"/> to <see cref="PhysicalProductDto"/>.
+        /// </summary>
+        CreateMap<PhysicalProduct, PhysicalProductDto>()
+            .ReverseMap();
 
+        /// <summary>
+        /// Maps <see cref="BaseProductDto"/> to <see cref="PhysicalProductDto"/>.
+        /// Includes extra property mappings.
+        /// </summary>
         CreateMap<BaseProductDto, PhysicalProductDto>()
-            .MapExtraProperties().ReverseMap();
+            .MapExtraProperties()
+            .ReverseMap();
 
-        CreateMap<CreateUpdateBaseProductDto, PhysicalProduct>()
-            .MapExtraProperties().ReverseMap();
     }
 }
+

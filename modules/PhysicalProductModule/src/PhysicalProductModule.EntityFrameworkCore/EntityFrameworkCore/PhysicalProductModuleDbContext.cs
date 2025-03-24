@@ -24,7 +24,7 @@ public class PhysicalProductModuleDbContext : AbpDbContext<PhysicalProductModule
         base.OnModelCreating(builder);
         builder.Entity<PhysicalProduct>(b =>
         {
-            b.UseTpcMappingStrategy();
+            //b.UseTpcMappingStrategy();
             b.HasQueryFilter(e => !EF.Property<bool>(e, "IsDeleted")); 
         }); builder.ConfigurePhysicalProductModule();
     }

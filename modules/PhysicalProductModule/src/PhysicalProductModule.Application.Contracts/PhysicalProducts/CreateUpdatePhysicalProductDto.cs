@@ -13,5 +13,4 @@ namespace PhysicalProductModule.PhysicalProducts;
 /// </summary>
 public class CreateUpdatePhysicalProductDto : CreateUpdateBaseProductDto
 {
-    public int Stock {  get; set; }
 }

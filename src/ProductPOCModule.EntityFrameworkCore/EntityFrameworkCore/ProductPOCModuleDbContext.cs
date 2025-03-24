@@ -18,6 +18,7 @@ using BaseProductModule.EntityFrameworkCore;
 using PhysicalProductModule.EntityFrameworkCore;
 using PhysicalProductModule.Entities;
 using BaseProductModule.Entities;
+using System.Reflection.Emit;
 
 namespace ProductPOCModule.EntityFrameworkCore;
 
@@ -92,13 +93,12 @@ public class ProductPOCModuleDbContext :
         //});
         builder.Entity<BaseProduct>(b =>
         {
-            b.UseTpcMappingStrategy();
+            b.UseTphMappingStrategy()
+             .HasDiscriminator(e => e.Discriminator)
+             .HasValue<PhysicalProduct>("PhysicalProduct")
+             .HasValue<BaseProduct>("BaseProduct");          
         });
-        builder.Entity<PhysicalProduct>(b =>
-        {
-            b.UseTpcMappingStrategy();
-        });
-
+   
         builder.ConfigureBaseProductModule();
             builder.ConfigurePhysicalProductModule();
         }

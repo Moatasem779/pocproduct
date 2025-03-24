@@ -1912,11 +1912,6 @@ namespace ProductPOCModule.Migrations
                 {
                     b.HasBaseType("BaseProductModule.Entities.BaseProduct");
 
-                    b.Property<string>("ExtraProperties")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ExtraProperties");
-
                     b.Property<int>("Stock")
                         .HasColumnType("int");
 
