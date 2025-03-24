@@ -11,7 +11,11 @@ using Volo.Abp.Domain.Repositories;
 using Volo.Abp.ObjectMapping;
 
 namespace BaseProductModule.BaseProducts;
-/// <inheritdoc/>
+/// <summary>
+/// Application service for managing base products.
+/// Inherits from <see cref="BaseProductModuleAppService"/> and implements <see cref="IBaseProductAppService"/>.
+/// Provides business logic and operations related to base products.
+/// </summary>
 public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAppService 
 {
     private readonly IRepository<BaseProduct, int> _repository;

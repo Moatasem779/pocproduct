@@ -14,7 +14,10 @@ using Volo.Abp.Domain.Repositories;
 using Volo.Abp.ObjectMapping;
 
 namespace PhysicalProductModule.PhysicalProducts;
-
+/// <summary>
+/// Application service for managing physical products.
+/// Inherits from <see cref="PhysicalProductModuleAppService"/> and implements <see cref="IPhysicalProductAppService"/>.
+/// </summary>
 public class PhysicalProductAppService  : PhysicalProductModuleAppService , IPhysicalProductAppService
 {
     private readonly IRepository<BaseProduct, int> _repository;
