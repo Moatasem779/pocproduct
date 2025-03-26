@@ -25,12 +25,12 @@ public class BaseProductAppService : BaseProductModuleAppService, IBaseProductAp
     }
     /// <inheritdoc/>
     public async Task<BaseProductDto> CreateAsync(CreateUpdateBaseProductDto input)
-    {
+    {                
         var baseProduct = ObjectMapper.Map<CreateUpdateBaseProductDto, BaseProduct>(input);
         baseProduct.Discriminator = typeof(BaseProduct).Name;
-        var result = await _repository.InsertAsync(baseProduct,true);
+        var result = await _repository.InsertAsync(baseProduct,autoSave: true);
         return ObjectMapper.Map<BaseProduct, BaseProductDto>(result);
-    }
+    }                
     /// <inheritdoc/>
     public async Task DeleteAsync(int id)
     {

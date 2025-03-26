@@ -25,6 +25,7 @@ public class BaseProductModuleApplicationAutoMapperProfile : Profile
              .ForMember(dest => dest.CreationTime, opt => opt.Ignore())
              .ForMember(dest => dest.CreatorId, opt => opt.Ignore())
              .ForMember(dest => dest.Id, opt => opt.Ignore())
+             
              .ReverseMap();
 
         /// <summary>
@@ -41,7 +42,7 @@ public class BaseProductModuleApplicationAutoMapperProfile : Profile
             .ForMember(dest => dest.LastModifierId, opt => opt.Ignore())
             .ForMember(dest => dest.Discriminator, opt => opt.Ignore())
             .ForMember(dest => dest.Id, opt => opt.Ignore())
-            .ForMember(dest => dest.ExtraProperties, opt => opt.Ignore())
+            .MapExtraProperties()
             .ReverseMap();
 
         /// <summary>
